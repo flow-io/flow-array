@@ -4,6 +4,13 @@ flow-array
 Writable stream which transforms an array into a readable stream.
 
 
+## Installation
+
+``` bash
+$ npm install flow-array
+```
+
+
 ## Examples
 
 ``` javascript
