@@ -14,24 +14,23 @@ $ npm install flow-array
 ## Examples
 
 ``` javascript
-var // Flow array stream generator:
+var eventStream = require( 'event-stream' ),
 	aStream = require( 'flow-array' );
 
-var data = new Array( 1000 ),
-	stream;
-
 // Create some data...
-for ( var i = 0; i < 1000; i++ ) {
+var var data = new Array( 1000 );
+for ( var i = 0; i < data.length; i++ ) {
 	data[ i ] = Math.random();
 }
 
-// Create a new stream:
-stream = aStream().stream();
+// Create a new writable array stream:
+var stream = aStream().stream();
 
-// Add a listener:
-stream.on( 'data', function( data ) {
-	console.log( data );
-});
+// Create a pipeline:
+stream.pipe( eventStream.map( function( d, clbk ) {
+		clbk( null, d.toString() );
+	}))
+	.pipe( process.stdout );
 
 // Write the data to the stream:
 stream.write( data );
