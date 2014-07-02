@@ -18,7 +18,7 @@ var eventStream = require( 'event-stream' ),
 	aStream = require( 'flow-array' );
 
 // Create some data...
-var var data = new Array( 1000 );
+var data = new Array( 1000 );
 for ( var i = 0; i < data.length; i++ ) {
 	data[ i ] = Math.random();
 }
