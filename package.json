@@ -1,6 +1,6 @@
 {
   "name": "flow-array",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Writable stream which transforms an array into a readable stream.",
   "author": {
     "name": "Athan Reines",
